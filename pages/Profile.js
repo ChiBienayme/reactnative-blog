@@ -20,7 +20,7 @@ export default function Profile() {
 
             </View>
 
-            <View>
+            <View style={styles.footer}>
                 <Footer />
             </View>
             
@@ -34,10 +34,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "#fff",
-      margin: 40,
-      padding: 10,
+      margin: 30,
+      padding: 5,
       alignItems: "center",
       justifyContent: "center",
     },
+    footer: {
+        marginTop: 280,
+    }
 })
 

@@ -6,21 +6,21 @@ export default function Timeline() {
 	const navigate = useNavigate();
 
 	return (
-        <View>
-            <View>
-            <TouchableOpacity style={styles.footer} onPress={() => navigate("/")}>
-                <Text style={styles.footerText}> Home </Text>
-            </TouchableOpacity>
+        
+            <View style={styles.container}>
+                <TouchableOpacity style={styles.footer} onPress={() => navigate("/")}>
+                    <Text style={styles.footerText}> Home </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.footer} onPress={() => navigate("/timeline")}>
-                <Text style={styles.footerText}> Timeline </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.footer} onPress={() => navigate("/timeline")}>
+                    <Text style={styles.footerText}> Timeline </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.footer} onPress={() => navigate("/profile")}>
-                <Text style={styles.footerText}> Profile </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.footer} onPress={() => navigate("/profile")}>
+                    <Text style={styles.footerText}> Profile </Text>
+                </TouchableOpacity>
             </View>
-        </View>  
+         
 
 	);
 }
@@ -29,10 +29,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "#fff",
-      margin: 40,
-      padding: 10,
-      alignItems: "center",
-      justifyContent: "center",
+      margin: 5,
+      marginTop: 200,
+      padding: 20,
+      flexDirection: "row",
+      flexWrap: "wrap",
+      backgroundColor:"powderblue",
+      borderRadius: 5,
     },
     
     footer: {
@@ -40,15 +43,15 @@ const styles = StyleSheet.create({
       borderColor: "lightgrey",
       backgroundColor: "coral",
       borderRadius: 5,
-      width: 80,
-      marginTop: 40,
+      width: 70,
       margin: 5,
-      flexDirection: "row",
-      flexWrap: "wrap",
     }, 
+
     footerText: {
       color: "white",
       textAlign: "center",
+      alignItems: "center",
+      justifyContent: "center",
       margin: 5,
     }
   

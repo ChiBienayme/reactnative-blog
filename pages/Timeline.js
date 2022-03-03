@@ -5,21 +5,18 @@ import Footer from "./Footer"
 export default function Timeline() {
 	const navigate = useNavigate();
 
+
+
 	return (
 		<View style={styles.container}>
             <View>
-                <Text
-                    style={{
-                        textAlign: "center",
-                        fontSize: 40,
-                        fontWeight: "bold",
-                    }}
-                >
+                <Text style={styles.timeline}>
                     Timeline
                 </Text>
             </View>
+
 			
-            <View>
+            <View style={styles.footer}>
                 <Footer />
             </View>
 		</View>
@@ -28,11 +25,19 @@ export default function Timeline() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      margin: 40,
-      padding: 10,
-      alignItems: "center",
-      justifyContent: "center",
+        flex: 1,
+        backgroundColor: "#fff",
+        margin: 30,
+        padding: 5,
+        alignItems: "center",
+        justifyContent: "center",
     },
+    timeline: {
+        textAlign: "center",
+        fontSize: 40,
+        fontWeight: "bold",
+    },
+    footer: {
+        marginTop: 280,
+    }
 })

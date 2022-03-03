@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   TextInput,
-  Switch,
+  FlatList,
   SafeAreaView,
   StyleSheet,
   Alert,
 } from "react-native";
 import { useNavigate } from "react-router-native";
-import Footer from "./Footer"
+import Footer from "./Footer";
+
+
 
 export default function Home() {
   const [ID, setID] = useState(1);
@@ -27,7 +29,7 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.home} > Home </Text>
+        <Text style={styles.home}> Home </Text>
         <TextInput
           style={styles.input}
           placeholder="ID"
@@ -38,10 +40,8 @@ export default function Home() {
           <Text style={styles.submitText}> Submit </Text>
         </TouchableOpacity>
       </View>
-
-
-      {/* FOOTER */}
-      <View>
+     
+      <View style={styles.footer}>
         <Footer />
       </View>
     </SafeAreaView>
@@ -52,14 +52,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    margin: 40,
+    margin: 30,
     padding: 10,
     alignItems: "center",
     justifyContent: "center",
   },
-  home:{
-    marginTop: 200,
-    marginLeft: 30,
+  home: {
     textAlign: "center",
     fontSize: 40,
     fontWeight: "bold",
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     borderColor: "lightgrey",
-    marginTop: 50,
+    marginTop: 150,
   },
   submit: {
     borderWidth: 1,
@@ -78,7 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     borderRadius: 5,
     width: 80,
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 60,
   },
   submitText: {
@@ -86,6 +84,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 5,
   },
- 
-
+  footer: {
+    marginTop: 100,
+  },
 });
