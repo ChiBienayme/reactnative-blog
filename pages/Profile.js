@@ -1,12 +1,16 @@
 import { View, Text, StyleSheet,} from "react-native";
 import { useNavigate } from "react-router-native";
-import Footer from "./Footer"
+import Header from "./Header"
 
 export default function Profile() {
 	const navigate = useNavigate();
 
 	return (
         <View style={styles.container}>
+            <View style={styles.header}>
+                <Header/>
+            </View>
+
             <View>
                 <Text
                     style={{
@@ -18,12 +22,7 @@ export default function Profile() {
                     Profile
                 </Text>
 
-            </View>
-
-            <View style={styles.footer}>
-                <Footer />
-            </View>
-            
+            </View>   
             
         </View>
 
@@ -39,8 +38,5 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
     },
-    footer: {
-        marginTop: 280,
-    }
 })
 

@@ -8,16 +8,17 @@ import {
   SafeAreaView,
   StyleSheet,
   Alert,
+  ActivityIndicator,
 } from "react-native";
 import { useNavigate } from "react-router-native";
-import Footer from "./Footer";
-
+import Header from "./Header";
+import Timeline from "./Timeline";
 
 
 export default function Home() {
   const [ID, setID] = useState(1);
   const navigate = useNavigate();
-
+  
   const handleSubmit = () => {
     if (ID.length > 0) {
       setID();
@@ -26,8 +27,13 @@ export default function Home() {
     } 
   };
 
+
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Header />
+      </View>
+
       <View>
         <Text style={styles.home}> Home </Text>
         <TextInput
@@ -40,10 +46,8 @@ export default function Home() {
           <Text style={styles.submitText}> Submit </Text>
         </TouchableOpacity>
       </View>
-     
-      <View style={styles.footer}>
-        <Footer />
-      </View>
+
+      
     </SafeAreaView>
   );
 }
@@ -83,8 +87,5 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     margin: 5,
-  },
-  footer: {
-    marginTop: 100,
   },
 });

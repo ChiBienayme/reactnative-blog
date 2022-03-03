@@ -1,23 +1,22 @@
 import { View, Text, TouchableOpacity, StyleSheet, } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigate } from "react-router-native";
 
-export default function Timeline() {
+export default function Header() {
 	const navigate = useNavigate();
 
 	return (
         
             <View style={styles.container}>
-                <TouchableOpacity style={styles.footer} onPress={() => navigate("/")}>
-                    <Text style={styles.footerText}> Home </Text>
+                <TouchableOpacity style={styles.header} onPress={() => navigate("/")}>
+                    <Text style={styles.headerText}> Home </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.footer} onPress={() => navigate("/timeline")}>
-                    <Text style={styles.footerText}> Timeline </Text>
+                <TouchableOpacity style={styles.header} onPress={() => navigate("/timeline")}>
+                    <Text style={styles.headerText}> Timeline </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.footer} onPress={() => navigate("/profile")}>
-                    <Text style={styles.footerText}> Profile </Text>
+                <TouchableOpacity style={styles.header} onPress={() => navigate("/profile")}>
+                    <Text style={styles.headerText}> Profile </Text>
                 </TouchableOpacity>
             </View>
          
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: "#fff",
       margin: 5,
-      marginTop: 200,
+      marginTop: 5,
       padding: 20,
       flexDirection: "row",
       flexWrap: "wrap",
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
       borderRadius: 5,
     },
     
-    footer: {
+    header: {
       borderWidth: 1,
       borderColor: "lightgrey",
       backgroundColor: "coral",
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
       margin: 5,
     }, 
 
-    footerText: {
+    headerText: {
       color: "white",
       textAlign: "center",
       alignItems: "center",
