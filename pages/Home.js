@@ -10,6 +10,7 @@ import {
   Alert,
 } from "react-native";
 import { useNavigate } from "react-router-native";
+import Footer from "./Footer"
 
 export default function Home() {
   const [ID, setID] = useState(1);
@@ -38,19 +39,10 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
+
+      {/* FOOTER */}
       <View>
-        <TouchableOpacity style={styles.footer} onPress={() => navigate("/")}>
-          <Text style={styles.footerText}> Home </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.footer} onPress={() => navigate("/timeline")}>
-          <Text style={styles.footerText}> Timeline </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.footer} onPress={() => navigate("/profile")}>
-          <Text style={styles.footerText}> Profile </Text>
-        </TouchableOpacity>
-
+        <Footer />
       </View>
     </SafeAreaView>
   );
@@ -66,10 +58,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   home:{
-    fontSize: 32,
-    fontWeight: "bold",
     marginTop: 200,
     marginLeft: 30,
+    textAlign: "center",
+    fontSize: 40,
+    fontWeight: "bold",
   },
   input: {
     borderWidth: 1,
@@ -93,21 +86,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 5,
   },
-  footer: {
-    borderWidth: 1,
-    borderColor: "lightgrey",
-    backgroundColor: "black",
-    borderRadius: 5,
-    width: 80,
-    marginTop: 10,
-    marginLeft: 60,
-  }, 
-  footerText: {
-    color: "white",
-    textAlign: "center",
-    margin: 5,
-  }
-
-
+ 
 
 });
